@@ -1,69 +1,70 @@
 # Password Audit Bot per Telegram [![Chat with Bot](https://img.shields.io/badge/Telegram-Chat%20with%20Bot-blue?logo=telegram)](https://t.me/passwordaudit_bot)
 
-Un bot Telegram per verificare la sicurezza delle password in modo sicuro e rispettoso della privacy, implementando le migliori pratiche di security by design e privacy by design.
+A Telegram bot to verify password security in a safe and privacy-respecting manner, implementing best practices of security by design and privacy by design.
+
+## 🔒 Features
+
+- **Password verification via Have I Been Pwned database using k-Anonymity
+- **Rate limiting to protect against brute force and DoS attacks
+- **Input sanitization to prevent injection and other attacks
+- **Secure logging without storing sensitive data
+- **Secure deployment with HTTPS via webhook
+- **Modular architecture for easy maintenance and updates
+- **Containerized execution with Docker and Docker Compose
 
 
-## 🔒 Caratteristiche
-
-- **Verifica password** tramite il database Have I Been Pwned utilizzando k-Anonymity
-- **Rate limiting** per proteggere da attacchi di brute force e DoS
-- **Sanitizzazione input** per prevenire injection e altri attacchi
-- **Logging sicuro** senza memorizzazione di dati sensibili
-- **Deployment sicuro** con HTTPS via webhook
-- **Architettura modulare** per facile manutenzione e aggiornamenti
-- **Esecuzione containerizzata** con Docker e Docker Compose
-
-
-## 📖 Struttura del Progetto
+## 📖 Project Structure
 
 ```
 telegram_bot/
-├── bot/                    # Gestori dei comandi e middleware
+├── bot/                    # Command handlers and middleware
 │   ├── __init__.py
-│   ├── handlers.py         # Handler per i comandi del bot
-│   └── middleware.py       # Middleware per rate limiting e sicurezza
-├── security/               # Moduli per la sicurezza
+│   ├── handlers.py         # Bot command handlers
+│   └── middleware.py       # Middleware for rate limiting and security
+├── security/               # Security modules
 │   ├── __init__.py
-│   ├── password_analyzer.py # Analisi della sicurezza delle password
-│   └── hibp_client.py      # Client per l'API di Have I Been Pwned
+│   ├── password_analyzer.py # Password security analysis
+│   └── hibp_client.py      # Have I Been Pwned API client
 ├── utils/                  # Utilities
 │   ├── __init__.py
-│   └── logging.py          # Logger sicuro
-├── certs/                  # Certificati SSL/TLS
-├── config.py               # Configurazione centralizzata
-├── main.py                 # Punto di ingresso principale
-├── Dockerfile              # Configurazione Docker
-├── docker-compose.yml      # Configurazione Docker Compose
-├── requirements.txt        # Dipendenze Python
-├── .env                    # Variabili d'ambiente (non versionato)
-└── .env.example            # Esempio di variabili d'ambiente
+│   └── logging.py          # Secure logger
+├── certs/                  # SSL/TLS certificates
+├── config.py               # Centralized configuration
+├── main.py                 # Main entry point
+├── Dockerfile              # Docker configuration
+├── docker-compose.yml      # Docker Compose configuration
+├── requirements.txt        # Python dependencies
+├── .env                    # Environment variables (not versioned)
+└── .env.example            # Environment variables example
 ```
 
 ## 📝 Comandi del Bot
 
-- `/start` - Avvia il bot e mostra il messaggio di benvenuto
-- `/check` - Verifica la sicurezza di una password
-- `/tips` - Mostra consigli per creare password sicure
-- `/help` - Mostra tutti i comandi disponibili
-- `/cancel` - Annulla l'operazione corrente
+- `/start` - Start the bot and show the welcome message
+- `/check` - Verify a password's security
+- `/tips` - Show tips for creating secure passwords
+- `/help` - Show all available commands
+- `/cancel` - Cancel the current operation
 
-## ⚙️ Best Practices di Security e Privacy
+
+## ⚙️ Security and Privacy Best Practices
 
 ### Security by Design
 
-- **Principio del privilegio minimo**: Esecuzione con utente non privilegiato
-- **Difesa in profondità**: Multiple misure di sicurezza implementate
-- **Fail secure**: In caso di errore, non rivela informazioni sensibili
-- **Validazione input**: Tutti gli input vengono validati e sanitizzati
-- **Protezione DoS**: Rate limiting per prevenire attacchi di denial of service
-- **HTTPS obbligatorio**: Le comunicazioni avvengono solo tramite canali sicuri
-- **Configurazione sicura**: Nessun valore sensibile hardcoded nel codice
+- **Principle of least privilege**: Execution with non-privileged user
+- **Defense in depth**: Multiple security measures implemented
+- **Fail secure**: In case of error, does not reveal sensitive information
+- **Input validation**: All inputs are validated and sanitized
+- **DoS protection**: Rate limiting to prevent denial of service attacks
+- **HTTPS mandatory**: Communications occur only through secure channels
+- **Secure configuration**: No sensitive values hardcoded in the code
+
 
 ### Privacy by Design
 
-- **Minimizzazione dei dati**: Solo i dati essenziali vengono elaborati
-- **Nessuna persistenza**: Le password non vengono mai salvate
-- **k-Anonymity**: La verifica con HIBP avviene senza rivelare la password completa
-- **Trasparenza**: Chiara comunicazione all'utente su come vengono gestiti i dati
-- **Controllo utente**: L'utente può annullare il processo in qualsiasi momento
-- **Privacy dei log**: I log non contengono dati sensibili o identificativi
+- **Data minimization**: Only essential data is processed
+- **No persistence**: Passwords are never saved
+- **k-Anonymity**: Verification with HIBP occurs without revealing the complete password
+- **Transparency**: Clear communication to the user about how data is handled
+- **User control**: The user can cancel the process at any time
+- **Log privacy**: Logs do not contain sensitive or identifying data
