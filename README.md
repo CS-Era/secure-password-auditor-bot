@@ -1,6 +1,7 @@
-# Password Audit Bot per Telegram
+# Password Audit Bot per Telegram [![Chat with Bot](https://img.shields.io/badge/Telegram-Chat%20with%20Bot-blue?logo=telegram)](https://t.me/passwordaudit_bot)
 
 Un bot Telegram per verificare la sicurezza delle password in modo sicuro e rispettoso della privacy, implementando le migliori pratiche di security by design e privacy by design.
+
 
 ## 🔒 Caratteristiche
 
