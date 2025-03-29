@@ -11,7 +11,7 @@ services:
       - ENVIRONMENT=production
       # SECURITY: Limitazioni aggiuntive per rate limiting
       - RATE_LIMIT_WINDOW=60
-      - RATE_LIMIT_MAX_CALLS=5
+      - RATE_LIMIT_MAX_CALLS=15
     ports:
       - "443:443"
     volumes:
