@@ -1,4 +1,4 @@
-# Password Audit Bot per Telegram [![Chat with Bot](https://img.shields.io/badge/Telegram-Chat%20with%20Bot-blue?logo=telegram)](https://t.me/passwordaudit_bot)
+# Password Audit Bot for Telegram [![Chat with Bot](https://img.shields.io/badge/Telegram-Chat%20with%20Bot-blue?logo=telegram)](https://t.me/passwordaudit_bot)
 
 A Telegram bot to verify password security in a safe and privacy-respecting manner, implementing best practices of security by design and privacy by design.
 
@@ -38,7 +38,7 @@ telegram_bot/
 └── .env.example            # Environment variables example
 ```
 
-## 📝 Comandi del Bot
+## 📝 Bot Commands
 
 - `/start` - Start the bot and show the welcome message
 - `/check` - Verify a password's security
