@@ -1,0 +1,31 @@
+services:
+  # Password Audit Bot in modalità webhook (sicura)
+  password-audit-bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MODE=webhook
+      # SECURITY: Impostazione esplicita per indicare che è un ambiente di produzione
+      - ENVIRONMENT=production
+      # SECURITY: Limitazioni aggiuntive per rate limiting
+      - RATE_LIMIT_WINDOW=60
+      - RATE_LIMIT_MAX_CALLS=5
+    ports:
+      - "443:443"
+    volumes:
+      # SECURITY: Montaggio dei certificati SSL in sola lettura
+      - ./certs/fullchain.pem:/app/certs/fullchain.pem:ro
+      - ./certs/privkey.pem:/app/certs/privkey.pem:ro
+    # SECURITY: Limita le risorse per maggiore sicurezza e stabilità
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+    # SECURITY: Security policy per docker
+    security_opt:
+      - no-new-privileges:true
+    # SECURITY: Disabilita accesso root
+    user: "appuser"
