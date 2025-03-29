@@ -4,13 +4,13 @@ A Telegram bot to verify password security in a safe and privacy-respecting mann
 
 ## 🔒 Features
 
-- **Password verification via Have I Been Pwned database using k-Anonymity
-- **Rate limiting to protect against brute force and DoS attacks
-- **Input sanitization to prevent injection and other attacks
-- **Secure logging without storing sensitive data
-- **Secure deployment with HTTPS via webhook
-- **Modular architecture for easy maintenance and updates
-- **Containerized execution with Docker and Docker Compose
+- **Password verification** via Have I Been Pwned database using k-Anonymity
+- **Rate limiting** to protect against brute force and DoS attacks
+- **Input sanitization** to prevent injection and other attacks
+- **Secure logging** without storing sensitive data
+- **Secure deployment** with HTTPS via webhook
+- **Modular architecture** for easy maintenance and updates
+- **Containerized execution** with Docker and Docker Compose
 
 
 ## 📖 Project Structure
